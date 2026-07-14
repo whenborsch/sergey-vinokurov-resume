@@ -9,103 +9,53 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Prata&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg:#f4efe8;
-      --surface:#fcfbf8;
-      --surface-2:#f1ebe3;
-      --surface-3:#e7dfd4;
-      --text:#1d1a16;
-      --muted:#6d655d;
-      --line:#d9d0c5;
-      --accent:#0d5b63;
-      --accent-soft:#dcebea;
-      --accent-2:#7e5b2f;
-      --shadow:0 22px 60px rgba(30,22,14,.08);
-      --radius-xl:30px;
-      --radius-lg:22px;
-      --radius-md:16px;
-      --font-body:'Inter',sans-serif;
-      --font-display:'Prata',serif;
+      --bg:#f4efe8; --surface:#fcfbf8; --surface-2:#f1ebe3; --text:#1d1a16; --muted:#6d655d;
+      --line:#d9d0c5; --accent:#0d5b63; --accent-soft:#dcebea; --accent-2:#7e5b2f;
+      --shadow:0 20px 56px rgba(30,22,14,.08); --font-body:'Inter',sans-serif; --font-display:'Prata',serif;
     }
     [data-theme="dark"] {
-      --bg:#151311;
-      --surface:#201c19;
-      --surface-2:#28231f;
-      --surface-3:#312a24;
-      --text:#f3ede6;
-      --muted:#b9aea3;
-      --line:#3c342e;
-      --accent:#81b8bb;
-      --accent-soft:rgba(129,184,187,.14);
-      --accent-2:#d0a56c;
-      --shadow:0 22px 60px rgba(0,0,0,.35);
+      --bg:#151311; --surface:#201c19; --surface-2:#28231f; --text:#f3ede6; --muted:#b9aea3;
+      --line:#3c342e; --accent:#81b8bb; --accent-soft:rgba(129,184,187,.14); --accent-2:#d0a56c;
+      --shadow:0 20px 56px rgba(0,0,0,.35);
     }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:var(--font-body);background:linear-gradient(180deg,var(--bg),#ece4da);color:var(--text);line-height:1.55}
+    *{box-sizing:border-box} body{margin:0;font-family:var(--font-body);background:linear-gradient(180deg,var(--bg),#ece4da);color:var(--text);line-height:1.48}
     [data-theme="dark"] body{background:linear-gradient(180deg,#141210,#1a1613)}
-    .page{max-width:1160px;margin:28px auto;padding:0 18px 36px}
-    .toolbar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:16px}
-    .brand{display:flex;align-items:center;gap:14px;color:var(--muted);font-size:14px}
-    .brand-mark{width:44px;height:44px;border-radius:14px;background:linear-gradient(135deg,var(--accent),#1c7881);display:grid;place-items:center;color:#fff;font-weight:800;letter-spacing:.08em}
+    .page{max-width:1120px;margin:24px auto;padding:0 16px 28px}
+    .toolbar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+    .brand{display:flex;align-items:center;gap:12px;color:var(--muted);font-size:13px}
+    .brand-mark{width:42px;height:42px;border-radius:13px;background:linear-gradient(135deg,var(--accent),#1c7881);display:grid;place-items:center;color:#fff;font-weight:800;letter-spacing:.08em}
     .actions{display:flex;gap:10px;flex-wrap:wrap}
-    button{border:1px solid var(--line);background:var(--surface);color:var(--text);padding:12px 16px;border-radius:999px;font-size:14px;font-weight:700;cursor:pointer;transition:.18s ease}
-    button:hover{transform:translateY(-1px);border-color:var(--accent)}
-    .btn-primary{background:var(--accent);color:#fff;border-color:var(--accent)}
-    .resume{background:var(--surface);border:1px solid rgba(120,103,87,.16);border-radius:34px;box-shadow:var(--shadow);overflow:hidden}
-    .hero{display:grid;grid-template-columns:300px 1fr;min-height:300px}
-    .hero-left{padding:32px;background:linear-gradient(180deg,var(--surface-2),var(--surface));border-right:1px solid var(--line)}
-    .hero-right{padding:38px 42px 34px}
-    .photo-wrap{width:100%;aspect-ratio:4/5;border-radius:26px;overflow:hidden;background:#d9d0c5;box-shadow:0 12px 30px rgba(0,0,0,.08)}
-    .photo-wrap img{width:100%;height:100%;object-fit:cover;object-position:center 18%}
-    .contact-block{margin-top:18px;display:grid;gap:10px;color:var(--muted);font-size:14px}
-    .eyebrow{display:inline-block;padding:8px 12px;border-radius:999px;background:var(--accent-soft);color:var(--accent);font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;margin-bottom:16px}
-    h1{margin:0;font-family:var(--font-display);font-size:clamp(34px,4vw,56px);line-height:1.05}
-    .role{margin-top:12px;font-size:21px;font-weight:800;color:var(--accent)}
-    .summary{margin-top:20px;max-width:760px;font-size:15.5px}
-    .metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:24px}
-    .metric{padding:16px;border-radius:18px;background:var(--surface-2);border:1px solid var(--line)}
-    .metric strong{display:block;font-size:28px;line-height:1;margin-bottom:6px}
-    .metric span{font-size:13px;color:var(--muted)}
-    .main{display:grid;grid-template-columns:1.35fr .65fr}
-    .col-main,.col-side{padding:34px 40px 40px}
-    .col-side{background:linear-gradient(180deg,rgba(13,91,99,.045),rgba(13,91,99,.02));border-left:1px solid var(--line)}
-    .section+.section{margin-top:30px}
-    .section-title{margin:0 0 14px;font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
-    .profile-card,.sector-card,.feature-box,.small-item{border:1px solid var(--line);border-radius:22px;background:var(--surface-2)}
-    .profile-card{padding:18px;font-size:14.5px}
-    .sector-card{padding:22px}
-    .sector-head{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-bottom:14px}
-    .sector-name{font-size:24px;font-weight:800;line-height:1.15}
-    .sector-sub{color:var(--muted);font-size:14px}
-    .client-chip{display:inline-flex;align-items:center;padding:8px 12px;border-radius:999px;background:var(--accent-soft);color:var(--accent);font-size:12px;font-weight:800;letter-spacing:.04em;text-transform:uppercase}
-    .fact-list{margin:0;padding-left:18px}
-    .fact-list li{margin-bottom:9px}
-    .fact-list li::marker{color:var(--accent)}
-    .split-note{margin-top:12px;padding:14px 15px;border-radius:16px;background:var(--surface);border:1px dashed var(--line);font-size:14px;color:var(--muted)}
-    .tags{display:flex;flex-wrap:wrap;gap:8px}
-    .tag{padding:9px 12px;border-radius:999px;border:1px solid var(--line);background:var(--surface);font-size:13px;font-weight:600}
-    .small-list{display:grid;gap:12px}
-    .small-item{padding:15px;background:var(--surface)}
-    .small-item strong{display:block;margin-bottom:5px;font-size:14px}
-    .highlight-grid{display:grid;gap:12px}
-    .feature-box{padding:16px;background:linear-gradient(180deg,var(--surface),var(--surface-2))}
-    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-    .muted{color:var(--muted)}
-    @media (max-width:980px){.hero,.main{grid-template-columns:1fr}.hero-left{border-right:none;border-bottom:1px solid var(--line)}.col-side{border-left:none;border-top:1px solid var(--line)}.metrics{grid-template-columns:1fr 1fr 1fr}}
-    @media (max-width:680px){.page{padding:0 10px 24px;margin:12px auto}.hero-left,.hero-right,.col-main,.col-side{padding:22px}.metrics,.two-col{grid-template-columns:1fr}.actions{width:100%}.actions button{flex:1 1 auto}}
-    @media print{body{background:#fff!important}.page{max-width:none;margin:0;padding:0}.toolbar{display:none!important}.resume{border:none;border-radius:0;box-shadow:none}.hero-left,.col-side{-webkit-print-color-adjust:exact;print-color-adjust:exact}a{color:inherit;text-decoration:none}}
+    button{border:1px solid var(--line);background:var(--surface);color:var(--text);padding:11px 15px;border-radius:999px;font-size:14px;font-weight:700;cursor:pointer;transition:.18s ease}
+    button:hover{transform:translateY(-1px);border-color:var(--accent)} .btn-primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+    .resume{background:var(--surface);border:1px solid rgba(120,103,87,.16);border-radius:30px;box-shadow:var(--shadow);overflow:hidden}
+    .hero{display:grid;grid-template-columns:250px 1fr}.hero-left{padding:24px;background:linear-gradient(180deg,var(--surface-2),var(--surface));border-right:1px solid var(--line)}
+    .hero-right{padding:28px 34px 24px}.photo-wrap{width:100%;aspect-ratio:4/5;border-radius:22px;overflow:hidden;background:#d9d0c5}
+    .photo-wrap img{width:100%;height:100%;object-fit:cover;object-position:center 18%}.contact-block{margin-top:14px;display:grid;gap:8px;color:var(--muted);font-size:13px}
+    .eyebrow{display:inline-block;padding:7px 11px;border-radius:999px;background:var(--accent-soft);color:var(--accent);font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px}
+    h1{margin:0;font-family:var(--font-display);font-size:clamp(32px,4vw,52px);line-height:1.03}.role{margin-top:10px;font-size:19px;font-weight:800;color:var(--accent)}
+    .summary{margin-top:14px;max-width:760px;font-size:14.5px}.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:18px}
+    .metric{padding:12px 14px;border-radius:16px;background:var(--surface-2);border:1px solid var(--line)} .metric strong{display:block;font-size:24px;line-height:1;margin-bottom:4px}
+    .metric span{font-size:12px;color:var(--muted)} .main{display:grid;grid-template-columns:1.38fr .62fr}.col-main,.col-side{padding:28px 34px 32px}
+    .col-side{background:linear-gradient(180deg,rgba(13,91,99,.045),rgba(13,91,99,.02));border-left:1px solid var(--line)} .section+.section{margin-top:22px}
+    .section-title{margin:0 0 12px;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+    .profile-card,.sector-card,.small-item,.feature{border:1px solid var(--line);border-radius:18px;background:var(--surface-2)} .profile-card{padding:15px;font-size:14px}
+    .sector-grid{display:grid;gap:12px}.sector-card{padding:17px}.sector-head{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+    .sector-name{font-size:20px;font-weight:800;line-height:1.1}.sector-sub{color:var(--muted);font-size:13px}.chip{display:inline-flex;align-items:center;padding:7px 10px;border-radius:999px;background:var(--accent-soft);color:var(--accent);font-size:11px;font-weight:800;letter-spacing:.04em;text-transform:uppercase}
+    .chip.fuel{background:rgba(126,91,47,.12);color:var(--accent-2)} .fact-list{margin:0;padding-left:18px}.fact-list li{margin-bottom:7px}.fact-list li::marker{color:var(--accent)}
+    .tags{display:flex;flex-wrap:wrap;gap:8px}.tag{padding:8px 11px;border-radius:999px;border:1px solid var(--line);background:var(--surface);font-size:12px;font-weight:600}
+    .small-list{display:grid;gap:10px}.small-item{padding:13px;background:var(--surface)} .small-item strong{display:block;margin-bottom:4px;font-size:13px}
+    .feature-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.feature{padding:14px;background:linear-gradient(180deg,var(--surface),var(--surface-2));font-size:13px}
+    .feature strong{display:block;margin-bottom:4px;font-size:13px}.muted{color:var(--muted)}
+    @media (max-width:980px){.hero,.main{grid-template-columns:1fr}.hero-left{border-right:none;border-bottom:1px solid var(--line)}.col-side{border-left:none;border-top:1px solid var(--line)}}
+    @media (max-width:680px){.page{padding:0 10px 24px;margin:12px auto}.hero-left,.hero-right,.col-main,.col-side{padding:20px}.metrics,.feature-grid{grid-template-columns:1fr}.actions{width:100%}.actions button{flex:1 1 auto}}
+    @media print{body{background:#fff!important}.page{max-width:none;margin:0;padding:0}.toolbar{display:none!important}.resume{border:none;border-radius:0;box-shadow:none}.hero-left,.col-side{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
   </style>
 </head>
 <body>
   <div class="page">
     <div class="toolbar">
-      <div class="brand">
-        <div class="brand-mark">SV</div>
-        <div>Обновленная структурированная версия с разделением по секторам и печатью в PDF</div>
-      </div>
-      <div class="actions">
-        <button class="btn-primary" onclick="window.print()">Скачать в PDF</button>
-        <button id="themeToggle">Сменить тему</button>
-      </div>
+      <div class="brand"><div class="brand-mark">SV</div><div>Сжатая версия с делением по секторам и печатью в PDF</div></div>
+      <div class="actions"><button class="btn-primary" onclick="window.print()">Скачать в PDF</button><button id="themeToggle">Сменить тему</button></div>
     </div>
 
     <main class="resume">
@@ -115,19 +65,19 @@
           <div class="contact-block">
             <div><strong>Телефон</strong><br>+7 (915) 332-19-74</div>
             <div><strong>Email</strong><br>vinokurov.important@mail.ru</div>
-            <div><strong>Локация</strong><br>Москва, м. Селигерская</div>
+            <div><strong>Локация</strong><br>Москва</div>
             <div><strong>Формат</strong><br>офис / гибрид / удаленно</div>
           </div>
         </div>
         <div class="hero-right">
-          <span class="eyebrow">Business Analysis · Finance · Digital Transformation</span>
+          <span class="eyebrow">Business Analysis · Finance · Fuel · Digital</span>
           <h1>Сергей<br>Винокуров</h1>
           <div class="role">Бизнес-аналитик / Консультант / Аналитик бизнес-процессов</div>
-          <p class="summary">Бизнес-аналитик с опытом в финансовой и цифровой трансформации: стандартизация процессов, интервьюирование функциональных заказчиков, моделирование As-Is / To-Be, поддержка UAT, сверка расчетной логики и аналитика выгрузок. Профиль усилен академической экспертизой в области ESG-отчетности, раскрытия данных и требований к сопоставимости показателей.</p>
+          <p class="summary">Бизнес-аналитик с опытом в проектах трансформации, стандартизации процессов, UAT, проверке расчетной логики и анализе выгрузок. Сильный профиль на стыке финансов, операционных процессов и цифровых артефактов для автоматизации.</p>
           <div class="metrics">
-            <div class="metric"><strong>18+</strong><span>месяцев в консалтинговых проектах трансформации</span></div>
-            <div class="metric"><strong>25+</strong><span>интервью и рабочих сессий с функциональными заказчиками</span></div>
-            <div class="metric"><strong>150k+</strong><span>строк обработанных выгрузок и сверок в Excel</span></div>
+            <div class="metric"><strong>18+</strong><span>месяцев в консалтинге</span></div>
+            <div class="metric"><strong>25+</strong><span>интервью и рабочих сессий</span></div>
+            <div class="metric"><strong>150k+</strong><span>строк сверок и выгрузок</span></div>
           </div>
         </div>
       </section>
@@ -135,85 +85,81 @@
       <section class="main">
         <div class="col-main">
           <section class="section">
-            <h2 class="section-title">Профессиональный профиль</h2>
-            <div class="profile-card">
-              Опыт сосредоточен на разборе неструктурированных процессов, переводе их в формализованные схемы и проверяемую расчетную логику, пригодную для автоматизации и управленческих решений. В работе сочетает процессный анализ, финансовую внимательность к происхождению цифр и уверенное взаимодействие с бизнесом на уровне конкретных операций, отклонений и правил расчета.
+            <h2 class="section-title">Профиль</h2>
+            <div class="profile-card">Опыт включает сбор и формализацию требований, описание As-Is / To-Be, анализ отклонений, ручную верификацию расчетов и подготовку материалов для автоматизации. Академическая база по ESG-отчетности усиливает навыки работы с сопоставимостью данных, логикой раскрытия показателей и требованиями заинтересованных сторон.</div>
+          </section>
+
+          <section class="section">
+            <h2 class="section-title">Сектора</h2>
+            <div class="sector-grid">
+              <div class="sector-card">
+                <div class="sector-head">
+                  <div>
+                    <div class="sector-name">Финансовый</div>
+                    <div class="sector-sub">КЭПТ · казначейство · финансовые процессы</div>
+                  </div>
+                  <div class="chip">Finance</div>
+                </div>
+                <ul class="fact-list">
+                  <li>Поддержаны этапы UAT в SAP S/4HANA (Казначейство) с фокусом на корректность расчетов, движение денежных средств и прогнозные показатели.</li>
+                  <li>Проверена расчетная логика по выгрузкам объемом 150 000+ строк; подтверждено происхождение показателей до уровня бюджета, сделки и статьи ДДС.</li>
+                  <li>Выявлены 20+ кейсов расхождений, связанных с ошибками агрегации, логикой включения операций и смешением близких по признакам сделок.</li>
+                  <li>Подтверждены сценарии план-план, план-факт и факт-факт; результаты использованы для уточнения алгоритмов последующей автоматизации.</li>
+                </ul>
+              </div>
+
+              <div class="sector-card">
+                <div class="sector-head">
+                  <div>
+                    <div class="sector-name">Топливный</div>
+                    <div class="sector-sub">Проектный контур с компаниями нефтегазового профиля, включая LUKOIL</div>
+                  </div>
+                  <div class="chip fuel">Fuel</div>
+                </div>
+                <ul class="fact-list">
+                  <li>Подготовлена аналитическая база для унификации процессов 6+ дочерних обществ в рамках модели общего центра обслуживания.</li>
+                  <li>Проведено 25+ интервью и рабочих сессий с функциональными заказчиками из филиалов и дочерних структур для выявления фактического распределения функций.</li>
+                  <li>Сконсолидированы 40+ аналитических материалов: матрицы функций, перечни операций, зоны пересечений и расхождений между подразделениями.</li>
+                  <li>Выявлены дублирующиеся и неформализованные функции, снижавшие сопоставимость сервисных процессов и усложнявшие централизацию.</li>
+                </ul>
+              </div>
+
+              <div class="sector-card">
+                <div class="sector-head">
+                  <div>
+                    <div class="sector-name">Цифровой</div>
+                    <div class="sector-sub">Инструменты, артефакты и подготовка логики под внедрение</div>
+                  </div>
+                  <div class="chip">Digital</div>
+                </div>
+                <ul class="fact-list">
+                  <li>Собраны и структурированы крупные массивы данных в Excel, включая ручную сверку, контроль логики сводных таблиц и проверку автoрасчетов.</li>
+                  <li>Использованы Visio и ARIS для описания текущих и целевых процессов, подготовки схем для обсуждения с бизнесом и командой внедрения.</li>
+                  <li>Подготовлены артефакты для цифрового контура: перечни функций, правила расчета, описания отклонений, сценарии проверки и материалы для UAT.</li>
+                  <li>Практически применимы знания GRI, SASB, TCFD и IFRS S1/S2 для задач, связанных с отчетностью, качеством данных и аналитикой раскрытия информации.</li>
+                </ul>
+              </div>
             </div>
           </section>
 
           <section class="section">
-            <h2 class="section-title">Опыт по секторам</h2>
-
-            <div class="sector-card">
-              <div class="sector-head">
-                <div>
-                  <div class="sector-name">Финансовый сектор</div>
-                  <div class="sector-sub">ООО «КЭПТ НАЛОГИ И КОНСУЛЬТИРОВАНИЕ» · Консультант · Июль 2023 — Январь 2025</div>
-                </div>
-                <div class="client-chip">Клиентский контур: LUKOIL / казначейство / финансы</div>
-              </div>
-              <ul class="fact-list">
-                <li>Проведено 25+ интервью и рабочих сессий с представителями филиалов и дочерних обществ для выявления фактического распределения функций, зон ответственности и операций, подлежащих передаче в единый сервисный центр.</li>
-                <li>Сконсолидированы результаты интервью в 40+ аналитических материалов: матрицы функций, перечни операций, карты пересечений и расхождений между подразделениями.</li>
-                <li>Подготовлена аналитическая база для унификации HR- и сервисных процессов 6+ дочерних обществ, включая разделение функций на централизуемые, локальные и требующие регламентной доработки.</li>
-                <li>Выполнен сравнительный анализ общих центров обслуживания и сервисных подразделений, в результате которого выявлены дублирующиеся, избыточные и неформализованные функции, снижавшие сопоставимость процессов.</li>
-                <li>Поддержаны этапы приемочного тестирования SAP S/4HANA (Казначейство) с фокусом на корректность расчетов, движение денежных средств и логику формирования прогнозных показателей.</li>
-                <li>Проверена расчетная логика по выгрузкам объемом 150 000+ строк; подтверждено происхождение ключевых показателей до уровня бюджета, сделки и статьи движения денежных средств.</li>
-                <li>Выявлены и описаны 20+ кейсов расхождений, связанных с ошибками агрегации, некорректным попаданием сделок в расчетные контуры и смешением близких по признакам операций.</li>
-                <li>Подтверждена корректность сценариев план-план, план-факт и факт-факт на нескольких этапах проекта; результаты использованы для уточнения алгоритмов дальнейшей автоматизации.</li>
-                <li>Подготовлены As-Is и To-Be описания финансовых процессов с акцентом на узкие места, ручные операции и требования к воспроизводимому расчетному контуру.</li>
-                <li>Обеспечена прозрачность для пользователей и проектной команды за счет объяснения происхождения показателей, логики расчета и причин появления расхождений в управленческих моделях.</li>
-              </ul>
-              <div class="split-note">Фокус сектора: финансовые процессы, казначейство, контроль расчетов, сверка прогнозных моделей, повышение доверия к данным и подготовка логики под автоматизацию.</div>
-            </div>
-
-            <div class="sector-card" style="margin-top:16px;">
-              <div class="sector-head">
-                <div>
-                  <div class="sector-name">Цифровой сектор</div>
-                  <div class="sector-sub">Инструменты, аналитические артефакты и цифровые навыки, проявленные в проектной работе</div>
-                </div>
-                <div class="client-chip" style="background:rgba(126,91,47,.12); color:var(--accent-2);">Инструменты и delivery</div>
-              </div>
-              <ul class="fact-list">
-                <li>Собраны и структурированы крупные массивы данных в Excel, включая многошаговую ручную сверку, контроль логики сводных таблиц и проверку корректности автоматических расчетов.</li>
-                <li>Использованы Visio и ARIS для формализации процессов, описания текущих и целевых схем работы, а также подготовки материалов для обсуждения с бизнесом и проектной командой.</li>
-                <li>Подготовлены аналитические артефакты, пригодные для передачи в цифровой контур: перечни функций, логика правил, описания отклонений, сценарии проверки и материалы для UAT.</li>
-                <li>Выстроено рабочее взаимодействие между пользователями, функциональными экспертами и командой внедрения, что сокращало цикл разбора инцидентов и ускоряло согласование бизнес-логики.</li>
-                <li>Подход к работе с данными усилен знаниями из магистерской работы по ESG-отчетности: сопоставимость показателей, прозрачность раскрытия, описание методик расчета и логика консолидации данных на уровне группы компаний.</li>
-                <li>Практически применимы знания стандартов GRI, SASB, TCFD и IFRS S1/S2 для задач, связанных с отчетностью, качеством данных, регуляторными требованиями и аналитикой раскрытия информации.</li>
-              </ul>
-              <div class="split-note">Фокус сектора: инструменты анализа, цифровые артефакты, документация, схемы процессов, логика данных и подготовка материалов для автоматизации и внедрения.</div>
-            </div>
-          </section>
-
-          <section class="section">
-            <h2 class="section-title">Измеримый эффект</h2>
-            <div class="highlight-grid two-col">
-              <div class="feature-box"><strong>Снижение риска ошибок</strong><br><span class="muted">Условно снижал риск некорректных управленческих расчетов за счет детальной трассировки цифр и проверки логики включения операций в модель.</span></div>
-              <div class="feature-box"><strong>Ускорение разбора расхождений</strong><br><span class="muted">Сокращал время диагностики проблем благодаря пониманию происхождения показателей и ручной проверке спорных кейсов до первичного источника.</span></div>
-              <div class="feature-box"><strong>Подготовка к автоматизации</strong><br><span class="muted">Формировал основу для последующей автоматизации процессов через структурирование функций, правил и исключений в понятном для проекта виде.</span></div>
-              <div class="feature-box"><strong>Повышение качества решений</strong><br><span class="muted">Помогал проектной команде переводить разрозненные практики подразделений в единый контур, удобный для согласования и стандартизации.</span></div>
+            <h2 class="section-title">Эффект</h2>
+            <div class="feature-grid">
+              <div class="feature"><strong>Снижение риска ошибок</strong><span class="muted">Детальная трассировка цифр и логики операций снижала риск некорректных управленческих расчетов.</span></div>
+              <div class="feature"><strong>Ускорение диагностики</strong><span class="muted">Быстрый разбор спорных кейсов сокращал время поиска причин расхождений.</span></div>
+              <div class="feature"><strong>Подготовка к автоматизации</strong><span class="muted">Функции, правила и исключения переводились в структуру, пригодную для внедрения.</span></div>
+              <div class="feature"><strong>Стандартизация процессов</strong><span class="muted">Разрозненные практики подразделений переводились в единый контур для согласования.</span></div>
             </div>
           </section>
         </div>
 
         <aside class="col-side">
           <section class="section">
-            <h2 class="section-title">Ключевые компетенции</h2>
+            <h2 class="section-title">Компетенции</h2>
             <div class="tags">
-              <span class="tag">Business Analysis</span>
-              <span class="tag">Process Mapping</span>
-              <span class="tag">As-Is / To-Be</span>
-              <span class="tag">UAT</span>
-              <span class="tag">SAP S/4HANA</span>
-              <span class="tag">Treasury</span>
-              <span class="tag">Excel</span>
-              <span class="tag">Visio</span>
-              <span class="tag">ARIS</span>
-              <span class="tag">Deviation Analysis</span>
-              <span class="tag">SSC / ОЦО</span>
-              <span class="tag">Data Validation</span>
+              <span class="tag">Business Analysis</span><span class="tag">As-Is / To-Be</span><span class="tag">UAT</span><span class="tag">SAP S/4HANA</span>
+              <span class="tag">Treasury</span><span class="tag">Excel</span><span class="tag">Visio</span><span class="tag">ARIS</span>
+              <span class="tag">SSC / ОЦО</span><span class="tag">Data Validation</span><span class="tag">ESG Reporting</span>
             </div>
           </section>
 
@@ -229,37 +175,25 @@
           <section class="section">
             <h2 class="section-title">Практика из диплома</h2>
             <div class="small-list">
-              <div class="small-item"><strong>Качество отчетности</strong>Проработаны принципы прозрачности, сопоставимости, описания методик расчета и ретроспективной динамики показателей минимум за три года.</div>
-              <div class="small-item"><strong>Стейкхолдеры</strong>Исследовано влияние отчетности на решения инвесторов, клиентов, сотрудников, органов власти и местных сообществ.</div>
-              <div class="small-item"><strong>Стандарты раскрытия</strong>GRI, SASB, TCFD, IFRS S1 / S2 — как база для задач на стыке аналитики, данных, отчетности и трансформации.</div>
+              <div class="small-item"><strong>Качество отчетности</strong>Прозрачность, сопоставимость, методики расчета, ретроспективная динамика показателей.</div>
+              <div class="small-item"><strong>Стейкхолдеры</strong>Влияние отчетности на решения инвесторов, клиентов, сотрудников и органов власти.</div>
+              <div class="small-item"><strong>Стандарты</strong>GRI, SASB, TCFD, IFRS S1 / S2.</div>
             </div>
           </section>
 
           <section class="section">
-            <h2 class="section-title">Навыки</h2>
+            <h2 class="section-title">Языки и публикации</h2>
             <div class="small-list">
-              <div class="small-item"><strong>Процессы</strong>Сбор требований, интервьюирование, описание процессов, регламентация, стандартизация функций.</div>
-              <div class="small-item"><strong>Данные и финансы</strong>Сверка расчетов, проверка прогнозных моделей, логический контроль показателей, анализ выгрузок.</div>
               <div class="small-item"><strong>Языки</strong>Русский — родной, английский — C1.</div>
+              <div class="small-item"><strong>Публикация</strong>Проблемы развития нефинансовой отчетности.</div>
             </div>
-          </section>
-
-          <section class="section">
-            <h2 class="section-title">Публикация</h2>
-            <div class="small-item"><strong>Статья</strong>Проблемы развития нефинансовой отчетности</div>
           </section>
         </aside>
       </section>
     </main>
   </div>
   <script>
-    (function(){
-      const root=document.documentElement;
-      const btn=document.getElementById('themeToggle');
-      let theme=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';
-      root.setAttribute('data-theme',theme);
-      btn.addEventListener('click',function(){theme=theme==='dark'?'light':'dark';root.setAttribute('data-theme',theme);});
-    })();
+    (function(){const root=document.documentElement;const btn=document.getElementById('themeToggle');let theme=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';root.setAttribute('data-theme',theme);btn.addEventListener('click',function(){theme=theme==='dark'?'light':'dark';root.setAttribute('data-theme',theme);});})();
   </script>
 </body>
 </html>
